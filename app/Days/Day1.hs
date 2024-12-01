@@ -6,6 +6,9 @@ import Data.Bifunctor (bimap)
 runner :: ToRun -> String -> (String, String)
 runner runs cont = 
     let sortedCols = bimap (sort . map read) (sort . map read) . unzip . map ((\[a,b] -> (a,b)) . words) . lines $ cont
-    in (ifFst runs $ show . sum . uncurry (zipWith (\x y -> abs $ x-y)) $ sortedCols,
+    in (
+        -- star 1
+        ifFst runs $ show . sum . uncurry (zipWith (\x y -> abs $ x-y)) $ sortedCols,
+        -- star 2
         ifSnd runs $ show . sum . (\(fl,sl) -> map (\f -> sum [f | s <- sl, s==f]) fl) $ sortedCols
     )
