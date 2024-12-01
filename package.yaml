@@ -1,0 +1,39 @@
+name:                aoc24
+version:             0.1.0.0
+#synopsis:
+#description:
+homepage:            https://github.com/Natan-P/aoc24#readme
+license:             BSD-3-Clause
+author:              Natan
+maintainer:          npolenec@gmail.com
+copyright:           2024 Natan
+category:            Web
+extra-source-files:
+- README.md
+- CHANGELOG.md
+
+dependencies:
+  - base >= 4.7 && < 5
+  - pqueue
+  - unordered-containers
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+executables:
+  aoc25runner:
+    source-dirs:      app
+    main:             Main.hs
+    dependencies:
+    - aoc24
