@@ -27,19 +27,11 @@ import qualified Days.Day24 as D24
 import qualified Days.Day25 as D25
 
 import Types
+import Utils
 
 import System.Environment (getArgs)
 import Numeric (readDec)
 import Control.Monad (when)
-
--- copied from base-4.20.0.1
-(!?) :: [a] -> Int -> Maybe a
-
-xs !? n
-  | n < 0     = Nothing
-  | otherwise = foldr (\x r k -> case k of
-                                   0 -> Just x
-                                   _ -> r (k-1)) (const Nothing) xs n
 
 runners :: [ToRun -> String -> (String,String)]
 runners = [D1.runner,

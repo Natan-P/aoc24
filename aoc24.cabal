@@ -21,6 +21,7 @@ extra-source-files:
 library
   exposed-modules:
       Types
+      Utils
   other-modules:
       Paths_aoc24
   autogen-modules:
